@@ -10,28 +10,31 @@
 #include	"time.h"
 #include "alarm.h"
 
+//Fill this table with positions of each sensor
+char sensor_name[6][15] = {
+  "Living room",
+  "Office",
+  "Kitchen",
+  "Bedroom",
+  "Unused",
+  "Unused"
+};
+
 
 void setup_alarm(void){
-	//P2DIR= 	//Set up direction
-	//P2IES=	//Interrupt Edge select
-	//P2IE=		//Interrupt enable
+	//P2DIR= 0x00; 	//Set up direction
+	//P2IES= 	//Interrupt Edge select
+	//P2IE=	0x	//Interrupt enable
 
 }
 
-void send_warning(void){
-	if(P2IFG==PIR_1){
-	//snprintf();
-
-	}
-	else if (P2IFG==PIR_2){
-
-	}
-	else if (P2IFG==PIR_3){
-
-	}
-	//send_sms
+void P2interrupt(void){
+	//Save input port
+	//Translate input port to sensor name
+	//Save rtc time
+	//Concatenation with sensor name
+	//Send sms
 }
-
 
 /*
 #pragma vector = PORT2_VECTOR
